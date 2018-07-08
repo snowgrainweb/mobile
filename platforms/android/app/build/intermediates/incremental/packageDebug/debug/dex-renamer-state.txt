@@ -1,0 +1,4 @@
+#Sun Jul 08 13:34:04 IST 2018
+base.0=D\:\\WS\\WebAngular\\content-site\\mobile\\snowgrain\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=D\:\\WS\\WebAngular\\content-site\\mobile\\snowgrain\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

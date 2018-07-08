@@ -1,0 +1,112 @@
+<div>
+    <div *ngIf="isLoading" class="container-fluide w-100 loader">
+        <mat-spinner color="accent" class="snowgrain-spinner"></mat-spinner>
+    </div>
+    <ng-sidebar-container>
+      <ng-sidebar [(opened)]="_opened" [mode]="'slide'" [closeOnClickOutside]="true" [showBackdrop]="true">
+        <div class="navbar-dark unique-color-dark sidebar-content">
+          <logo>
+            <a class="logo navbar-brand" href="#">
+              <strong>{{data.menu.title}}</strong>
+            </a>
+          </logo>
+  
+          <links>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item waves-light" *ngFor="let link of data.menu.links" mdbWavesEffect>
+                <a class="nav-link" routerLink="{{link.href}}">{{link.label}}</a>
+              </li>
+            </ul>
+          </links>
+        </div>
+      </ng-sidebar>
+      <div ng-sidebar-content> 
+        <header class="h-100">
+  
+          <!-- A sidebar -->
+          <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark unique-color-dark scrolling-navbar intro-fixed-nav"
+          [containerInside]="false">
+          <logo>
+              <i (click)="_toggleSidebar()" class="fa fa-navicon pr-2 white-text"></i>
+            <a class="logo navbar-brand" href="#">
+              <strong>{{data.menu.title}}</strong>
+            </a>
+          </logo>
+      </mdb-navbar>  
+          <!-- Page content -->
+  
+      
+        </header>
+        <div class="container">
+          
+          <!-- Projects section v.1 -->
+          <section class="text-center my-5 product-section">
+              <div *ngFor="let product of data.products" class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+                  <!--Featured image-->
+                  <div class="view overlay rounded z-depth-1">
+                    <img [src]="product.image" class="img-fluid" alt="Sample project image">
+                    <a>
+                      <div class="mask rgba-white-slight"></div>
+                    </a>
+                  </div>
+                  <!--Excerpt-->
+                  <div class="card-body pb-0">
+                    <h4 class="font-weight-bold my-3">{{product.title}}</h4>
+                    <p class="grey-text">{{product.content}}
+                    </p>
+                    <a class="btn btn-indigo btn-sm">
+                      <i class="fa fa-clone left"></i> Read more..</a>
+                  </div>
+                </div>
+                
+          </section>
+        </div>
+        <!-- Projects section v.1 -->
+        <div class="container-fluide unique-color-dark pt-1">
+          <div class="container text-center text-md-left mt-5">
+            <div class="row mt-3">
+              <!--First column-->
+              <div class="col-md-3 col-lg-4 col-xl-3 mb-4" *ngFor="let footer of data.footers">
+                <h6 class="text-uppercase font-weight-bold white-text">
+                  <strong>{{footer.title}}</strong>
+                </h6>
+                <hr class="info-color mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p *ngFor="let item of footer.items" class="white-text">
+                  <a href="/faq/">{{item}}</a>
+                </p>
+              </div>
+              <!--/.First column-->
+              <!--/.Third column-->
+              <!--Fourth column-->
+              <div class="col-md-4 col-lg-3 col-xl-3">
+                <h6 class="text-uppercase font-weight-bold white-text">
+                  <strong>Company</strong>
+                </h6>
+                <hr class="info-color mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p class="white-text">
+                  <a href="/our-team/">
+                    <i class="fa fa-envelope mr-3"></i> contact@mdbootstrap.com
+                  </a>
+                </p>
+                <!-- <p>
+                  <i class="fa fa-building mr-3"></i> Our story</p> -->
+                <p class="white-text">
+                  <a href="/our-team/">
+                    <i class="fa fa-facebook mr-3"></i> Facebook</a>
+                </p>
+                <p class="white-text">
+                  <a href="/contact/">
+                    <i class="fa fa-twitter mr-3"></i> Twitter</a>
+                </p>
+                <p class="white-text">
+                  <a href="/mdbootstrap-press-pack/">
+                    <i class="fa fa-instagram mr-3"></i> Instagram</a>
+                </p>
+              </div>
+              <!--/.Fourth column-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-sidebar-container>
+  </div>
